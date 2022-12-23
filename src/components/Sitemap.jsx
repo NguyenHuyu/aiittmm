@@ -6,16 +6,16 @@ const Sitemap = () => {
       fontSize: 8
   }
   return (
-    <div className='flex items-center bg-yellow-500 h-full'>
+    <div className='flex items-center bg-slate-600 h-full'>
       <div className="hidden md:flex w-full h-full z-20 items-center justify-center">
         <ul className='flex items-center gap-14 font-semibold'>
-          <AiOutlineHome className='cursor-pointer' size={27}/>
-          <li className='hover:text-lg hover:text-slate-500 cursor-pointer'>GIỚI THIỆU</li>
-          <li className='hover:text-lg hover:text-slate-500 cursor-pointer'>NGHIÊN CỨU KHOA HỌC</li>
-          <li className='hover:text-lg hover:text-slate-500 cursor-pointer'>ĐÀO TẠO</li>
-          <li className='hover:text-lg hover:text-slate-500 cursor-pointer'>HỢP TÁC</li>
-          <li className='hover:text-lg hover:text-slate-500 cursor-pointer'>TIN TỨC</li>
-          <li className='hover:text-lg hover:text-slate-500 cursor-pointer'>LIÊN HỆ</li>
+          <AiOutlineHome className='cursor-pointer bg-transparent' size={27}/>
+          <li className='hover:text-lg hover:text-slate-500 cursor-pointer text-black'>GIỚI THIỆU</li>
+          <li className='hover:text-lg hover:text-slate-500 cursor-pointer text-black'>NGHIÊN CỨU KHOA HỌC</li>
+          <li className='hover:text-lg hover:text-slate-500 cursor-pointer text-black'>ĐÀO TẠO</li>
+          <li className='hover:text-lg hover:text-slate-500 cursor-pointer text-black'>HỢP TÁC</li>
+          <li className='hover:text-lg hover:text-slate-500 cursor-pointer text-black'>TIN TỨC</li>
+          <li className='hover:text-lg hover:text-slate-500 cursor-pointer text-black'>LIÊN HỆ</li>
         </ul>
     </div>
     <div className="flex md:hidden w-full h-full pt-5 z-20 items-center justify-center">

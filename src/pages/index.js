@@ -1,0 +1,6 @@
+export { default as Intro}  from "./Intro"
+export { default as Research} from "./Research"
+export { default as Contact} from "./Contact"
+export { default as News} from "./News"
+export { default as Train} from "./Train"
+export { default as Cooperate} from "./Cooperate"

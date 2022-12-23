@@ -3,7 +3,22 @@ module.exports = {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",],
   theme: {
+    fontSize: {
+      sm: '0.8rem',
+      smm:'0.5rem',
+      smmm:'0.4rem',
+      base: '1rem',
+      xl: '1.25rem',
+      '2xl': '1.563rem',
+      '3xl': '1.953rem',
+      '4xl': '2.441rem',
+      '5xl': '3.052rem',
+      '6xl': '3.663rem',
+    },
     extend: {
+      backgroundImage: {
+        'footer-texture': "url('/src/assets/—Pngtree—blue connection line backgroundl_1238386.png')",
+      },
       width:{
         150: "150px",
         190: "190px",
@@ -31,6 +46,7 @@ module.exports = {
         685:"685px",
         800:"800px",
         "90vh":"90vh",
+        "12vh":"12vh",
       },
       minWidth:{
         210:"210px",
@@ -49,7 +65,10 @@ module.exports = {
         textColor:"#515151",
         cartNumbg:"#e80013",
         primary:"#f5f3f3",
-        headerColor:"#040063"
+        headerColor:"#040063",
+        bgHFto:"#6e6e70",
+        gbHFfrom:"#6c6c6e",
+        bgSitemap:"9da34c"
       },
     },
   },
