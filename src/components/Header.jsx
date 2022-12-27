@@ -41,16 +41,15 @@ const Header = () => {
       type:actionType.SET_USER,
       user:null
     })
-    window.location.reload(false);
   }
 
   return (
-    <header className="z-50 w-screen bg-gradient-to-r from-bgHFto via-gray-300 to-gbHFfrom  px-28">
+    <header className="z-50 w-full bg-gradient-to-r from-bgHFto via-gray-300 to-gbHFfrom  px-28">
       {/* reponsive mobile */}
       <div className="flex hidden:md w-full h-full justify-between items-center">
         <div className=" gap-1 -ml-24 my-3 md:ml-12 md:my-5">
           <Link to={"/"} >
-            <img src={Logo} className="w-16 md:w-36 object-cover " alt="" />
+            <img src={Logo} className="w-16 md:w-40 object-cover " alt="" />
             <p className="text-headingColor text-sm md:text-2xl md:w-96 w-56 md:mt-3 mt-2 font-bold flex">
               Asian Institute
               <br />
@@ -107,9 +106,10 @@ const Header = () => {
                 
             {user && user.email === "yuhuynguyen.1204@gmail.com" && (
                 <Link to="/create">
-                  <p className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:bg-slate-200 
+                  <p  onClick={()=> setIsMenu(false)}
+                      className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:bg-slate-200 
                           transition-all duration-100 ease-in-out text-textColor ">
-                    Add <IoMdAdd/>
+                    Add <IoMdAdd />
                   </p>
                 </Link>
             )}

@@ -3,4 +3,4 @@ export  { default as Main } from "./Main"
 export  { default as Create } from "./Create"
 export  { default as Sitemap } from "./Sitemap"
 export  { default as Footer } from "./Footer" 
-export  {}  
+export  { default as Loader } from "./Loader"  

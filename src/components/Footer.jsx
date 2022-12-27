@@ -9,7 +9,7 @@ import { AiFillMail,  } from "react-icons/ai";
 const Footer = () => {
  
   return (
-    <div className='w-screen z-50 h-auto bg-gradient-to-r from-bgHFto via-gray-400 to-gbHFfrom p-6 px-16'>
+    <div className='w-full z-50 bg-gradient-to-r from-bgHFto via-gray-400 to-gbHFfrom p-6 px-16'>
       <div className='hidden:md flex justify-center items-center md:flex md:justify-center md:items-center '>
         <div className='-ml-14 md:ml-12 md:flex-1 flex-1 '>
           <img src={Logo} 

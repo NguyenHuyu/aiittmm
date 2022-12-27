@@ -1,14 +1,32 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import { Create, Header, Main, Sitemap, Footer } from './components'
 import {Contact, Intro, News, Research, Train} from "./pages"
 import {Routes, Route} from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
+import { useStateValue } from './context/StateProvider'
+import { getItem } from './utils/firebaseFunc'
+import { actionType } from './context/reducer'
 
 
-const App = () =>{
+const App = () => {
+
+  const [{}, dispatch ] = useStateValue()
+  const fetchData = async() =>{
+    await getItem().then((data)=>{
+      dispatch({
+        type:actionType.SET_INFO,
+        Infomation: data
+      })
+    })
+  }
+  useEffect(() => {
+    fetchData()
+  }, []);
+ 
+
   return (
     <AnimatePresence exitBeforeEnter>
-      <div className='w-screen h-auto flex flex-col'>
+      <div className='w-[100%] h-auto flex flex-col md:justify-center md:items-center'>
         <Header/>
         <sitemap className="w-full h-16  ">
           <Sitemap />
@@ -24,9 +42,7 @@ const App = () =>{
             <Route path='/lien-he' element={<Contact/>} />
           </Routes>
         </main>
-        <footer className=''>
-            <Footer/>
-        </footer>
+        <Footer/>
       </div>  
     </AnimatePresence>
   )
