@@ -4,7 +4,8 @@ import { motion } from 'framer-motion'
 import { GrFacebook } from "react-icons/gr";
 import { FaInstagramSquare } from "react-icons/fa";
 import { SiZalo } from "react-icons/si";
-import { AiFillMail,  } from "react-icons/ai";
+import { AiFillMail,  } from "react-icons/ai"; 
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
  
@@ -48,13 +49,13 @@ const Footer = () => {
           </div>
         </div>
         <ul className='text-smm mx-10 flex-2 md:text-sm'>
-          <li>Trang chủ</li>
-          <li>Giới thiệu</li>
-          <li>Nghiên cứu</li>
-          <li>Đào tạo</li>
-          <li>Hợp tác</li>
-          <li>Tin tức</li>
-          <li>Liên hệ</li>
+          <li><Link to="/">Trang chủ</Link></li>
+          <li><Link to="/gioi-thieu">Giới thiệu</Link></li>
+          <li><Link to="/nghien-cuu">Nghiên cứu</Link></li>
+          <li><Link to="/dao-tao">Đào tạo</Link></li>
+          <li><Link to="/hop-tac">Hợp tác</Link></li>
+          <li><Link to="/tin-tuc">Tin tức</Link></li>
+          <li><Link to="/lien-he">Liên hệ</Link></li>
         </ul>
         <div className='text-right -mr-12 md:text-sm text-smm flex-1 md:-mr-0'>
           <p className=''>Quyền truy cập của nhân viên | Quyền truy cập của sinh viên | Liên hệ chúng tôi</p>

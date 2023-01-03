@@ -1,12 +1,10 @@
 export const actionType = {
     SET_USER : 'SET_USER',
-    SET_INFO : 'SET_INFO'
-
+    SET_INFO : 'SET_INFO',
+    SET_INFOR : 'SET_INFOR'
 }
 
 const reducer = (state, action)=>{
-    console.log(action)
-
     switch (action.type) {
         case actionType.SET_USER:
             return{
@@ -17,10 +15,17 @@ const reducer = (state, action)=>{
             return{
                 ...state,
                 Infomation:action.Infomation
-                }
+            }
+        case actionType.SET_INFOR:
+            return{
+                ...state,
+                InfomationR:action.InfomationR
+            }
         default:
             return state
     }
 }
 
 export default reducer
+
+

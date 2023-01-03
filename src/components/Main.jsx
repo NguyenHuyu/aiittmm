@@ -7,7 +7,9 @@ import CardR from './CardR'
 
 const Main = () => {
 
-  const [{Infomation}] = useStateValue() 
+  const [{ Infomation , InfomationR }] = useStateValue() 
+  console.log(InfomationR)
+  console.log(Infomation)
 
   return (
     <div className='w-full'>
@@ -29,8 +31,8 @@ const Main = () => {
         </div>
         <div className='bg-bgBody
                           md:shadow-lg md:shadow-slate-700/40
-                          md:grid md:grid-cols-5 md:px-32 py-8 md:items-center'>
-          <div className='col-span-3 flex flex-col items-start px-1'>
+                          md:grid md:grid-cols-5 md:px-32 py-8 '>
+          <div className='col-span-3 flex flex-col items-start px-1 md:pl-5 '>
             <p className='md:text-xl md:font-semibold md:py-4 md:mb-6 md:items-center'>Diễn Biến Mới Của Viện</p>
             <div className='md:overflow-y-auto md:h-864'>
               <CardL data={Infomation}/>
@@ -39,9 +41,7 @@ const Main = () => {
           <div className='col-span-2 flex flex-col items-start justify-center px-1'>
             <p className='md:text-xl md:font-semibold md:py-4 md:mb-6'>Theo Dõi Twiter</p>
             <div className='md:overflow-y-auto md:h-864  '>
-              <CardR />
-              <CardR/>
-              <CardR/>
+              <CardR dataa={InfomationR}/>
             </div>
           </div>
         </div>

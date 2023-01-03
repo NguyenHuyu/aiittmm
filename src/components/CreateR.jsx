@@ -5,18 +5,19 @@ import {GrAction} from "react-icons/gr"
 import Loader from './Loader';
 import { deleteObject, getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
 import { storage } from '../firebase.config';
-import { getItem, saveItem } from '../utils/firebaseFunc';
+import { getItemR, saveItemR } from '../utils/firebaseFunc';
 import { useStateValue } from '../context/StateProvider';
 import { actionType } from '../context/reducer';
 
-const Create = () => {
+const CreateR = () => {
   const [title, setTitle] = useState("")
-  const [calories, setCalories] = useState("")
-  const [price, setPrice] = useState("")
+  const [date, setDate] = useState("")
   const [image, setImage] = useState(null)
   const [fields, setFields] = useState(false)
+
   const [alert, setAlert] = useState("danger")
   const [msg, setMsg] = useState(null)
+
   const [isLoading, setIsLoading] = useState(false)
 
   const [{}, dispatch ] = useStateValue()
@@ -26,7 +27,8 @@ const Create = () => {
     const imageFile = e.target.files[0]
     const storageRef = ref(storage, `Images/${Date.now()}-${imageFile.name}`)
     const uploadTask = uploadBytesResumable(storageRef, imageFile) 
-    uploadTask.on('state_changed', (snapshot)=> {
+    
+  uploadTask.on('state_changed', (snapshot)=> {
     const uploadProgress = (snapshot.bytesTransferred / snapshot.totalBytes)*100
     
   }, (error) => {
@@ -39,7 +41,7 @@ const Create = () => {
           setIsLoading(false)
 
         }, 4000)   
-    }, () =>{
+    }, () => {
         getDownloadURL(uploadTask.snapshot.ref).then(downloadURL => {
           setImage(downloadURL)
           setIsLoading(false)
@@ -73,7 +75,7 @@ const Create = () => {
   const handleSave = () =>{
     setIsLoading(true)
     try {
-      if(!title || !calories || !image || !price ){
+      if(!title || !date || !image ){
         setFields(true)
         setMsg("Hãy điền đầy đủ thông tin")
         setAlert('danger')
@@ -81,17 +83,15 @@ const Create = () => {
           setFields(false)
           setIsLoading(false)
         }, 4000)   
-      }else{
-        const data =  {
+      } else {
+        const dataa =  {
           id: `${Date.now()}`,
           title: title,
           imageURL: image,
-          // category: category,
-          calories: calories,
+          date: date,
           qty: 1,
-          price: price
         }
-        saveItem(data)
+        saveItemR(dataa)
         setIsLoading(false)
         setFields(true)
         setMsg("Dữ liệu đã thêm thành công")
@@ -112,21 +112,20 @@ const Create = () => {
 
         }, 4000)   
     }
-    fetchData()
+    fetchDataR()
   }
 
   const clearData = () =>{
     setTitle("")
     setImage(null)
-    setCalories("Select Category")
-    setPrice("")
+    setDate("")
   }
 
-  const fetchData = async () => {
-    await getItem().then((data)=>{
+  const fetchDataR = async () => {
+    await getItemR().then((dataa)=>{
       dispatch({
-        type:actionType.SET_INFO,
-        Infomation: data
+        type:actionType.SET_INFOR,
+        InfomationR: dataa
       })
     })
   }
@@ -157,7 +156,7 @@ const Create = () => {
               type="text" 
               required 
               value={title} 
-              placeholder="Title"
+              placeholder="Nội Dung"
               onChange={(e)=> setTitle(e.target.value)}
               className='md:w-full md:h-full md:text-base bg-transparent outline-none border-none'
             />
@@ -212,12 +211,12 @@ const Create = () => {
                   <MdFoodBank className='md:text-base text-2xl'/>
                   <input type="text"
                         required
-                        value={calories}
-                        onChange={(e)=> setCalories(e.target.value)}
-                        placeholder='Nhập ngày:'
+                        value={date}
+                        onChange={(e)=> setDate(e.target.value)}
+                        placeholder='Ngày'
                         className='w-full h-full text-base bg-transparent outline-none border-none placeholder:text-gray-400' />
               </div>
-              <div className='w-full md:py-2 border-b border-gray-200 md:flex md:items-center md:gap-2'>
+              {/* <div className='w-full md:py-2 border-b border-gray-200 md:flex md:items-center md:gap-2'>
                   <MdFoodBank className='md:text-base text-2xl'/>
                   <input type="text"
                         required
@@ -225,7 +224,7 @@ const Create = () => {
                         onChange={(e)=> setPrice(e.target.value)}
                         placeholder='Chú thích thêm:'
                         className='w-full h-full text-base bg-transparent outline-none border-none placeholder:text-gray-400' />
-              </div>
+              </div> */}
           </div>
           <div className='md:flex md:items-center w-full'>
             <button type='button'
@@ -240,4 +239,4 @@ const Create = () => {
   );
 }
 
-export default Create;
+export default CreateR;

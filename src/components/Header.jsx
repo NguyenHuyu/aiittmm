@@ -105,11 +105,20 @@ const Header = () => {
                 className="w-24  bg-gray-50 shadow-xl rounded-lg flex flex-col absolute top-20 right-7">
                 
             {user && user.email === "yuhuynguyen.1204@gmail.com" && (
-                <Link to="/create">
+                <Link to="/create-left">
                   <p  onClick={()=> setIsMenu(false)}
                       className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:bg-slate-200 
                           transition-all duration-100 ease-in-out text-textColor ">
-                    Add <IoMdAdd />
+                    Add L <IoMdAdd />
+                  </p>
+                </Link>
+            )}
+            {user && user.email === "yuhuynguyen.1204@gmail.com" && (
+                <Link to="/create-right">
+                  <p  onClick={()=> setIsMenu(false)}
+                      className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:bg-slate-200 
+                          transition-all duration-100 ease-in-out text-textColor ">
+                    Add R <IoMdAdd />
                   </p>
                 </Link>
             )}

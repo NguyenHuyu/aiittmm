@@ -4,13 +4,15 @@ import {Contact, Intro, News, Research, Train} from "./pages"
 import {Routes, Route} from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
 import { useStateValue } from './context/StateProvider'
-import { getItem } from './utils/firebaseFunc'
+import { getItem, getItemR } from './utils/firebaseFunc'
 import { actionType } from './context/reducer'
+import CreateR from './components/CreateR'
 
 
 const App = () => {
 
   const [{}, dispatch ] = useStateValue()
+  
   const fetchData = async() =>{
     await getItem().then((data)=>{
       dispatch({
@@ -18,11 +20,17 @@ const App = () => {
         Infomation: data
       })
     })
+    await getItemR().then((dataa)=>{
+      dispatch({
+        type:actionType.SET_INFOR,
+        InfomationR: dataa
+      })
+    })
   }
   useEffect(() => {
     fetchData()
+
   }, []);
- 
 
   return (
     <AnimatePresence exitBeforeEnter>
@@ -34,7 +42,8 @@ const App = () => {
         <main className='mt-0 md:mt-0 w-full'>
           <Routes>
             <Route path='/*' element={<Main/>} />
-            <Route path='/create' element={<Create/>} />
+            <Route path='/create-left' element={<Create/>} />
+            <Route path='/create-right' element={<CreateR/>} />
             <Route path='/gioi-thieu' element={<Intro/>} /> 
             <Route path='/nghien-cuu' element={<Research/>} />
             <Route path='/dao-tao' element={<Train/>} />
