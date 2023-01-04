@@ -44,7 +44,7 @@ const Header = () => {
   }
 
   return (
-    <header className="z-50 w-full bg-gradient-to-r from-bgHFto via-gray-300 to-gbHFfrom  px-28">
+    <header className="z-50 w-full bg-gradient-to-r from-bgHFto via-gray-300 to-gbHFfrom  px-20">
       {/* reponsive mobile */}
       <div className="flex hidden:md w-full h-full justify-between items-center">
         <div className=" gap-1 -ml-24 my-3 md:ml-12 md:my-5">

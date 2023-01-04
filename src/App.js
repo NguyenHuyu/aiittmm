@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react'
 import { Create, Header, Main, Sitemap, Footer } from './components'
-import {Contact, Intro, News, Research, Train} from "./pages"
+import {Contact, Cooperate, Intro, News, Research, Train} from "./pages"
 import {Routes, Route} from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
 import { useStateValue } from './context/StateProvider'
@@ -47,6 +47,7 @@ const App = () => {
             <Route path='/gioi-thieu' element={<Intro/>} /> 
             <Route path='/nghien-cuu' element={<Research/>} />
             <Route path='/dao-tao' element={<Train/>} />
+            <Route path='/hop-tac' element={<Cooperate/>} />
             <Route path='/tin-tuc' element={<News/>} />
             <Route path='/lien-he' element={<Contact/>} />
           </Routes>

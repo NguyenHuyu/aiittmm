@@ -6,6 +6,8 @@ module.exports = {
     fontSize: {
       sm: '0.8rem',
       smm:'0.5rem',
+      s007:'0.6rem',
+      s077:'0.7rem',
       s07:'0.85rem',
       smmm:'0.4rem',
       base: '1rem',
@@ -19,6 +21,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         'footer-texture': "url('/src/assets/—Pngtree—blue connection line backgroundl_1238386.png')",
+        'background-news':"url('/src/assets/banner-header.jpg)"
       },
       width:{
         100: "100px",
@@ -48,6 +51,8 @@ module.exports = {
         685:"685px",
         800:"800px",
         864:"864px",
+        1200:"1200px",
+        2000:"3850px",
         "90vh":"90vh",
         "12vh":"12vh",
         "80vh":"80vh",

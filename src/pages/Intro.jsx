@@ -10,8 +10,8 @@ const Intro = () => {
       <Link to="/gioi-thieu">
       <section>
 	      <div className="bg-slate-700  text-white py-10">
-	      	<div className="container mx-auto flex flex-col md:flex-row items-center my-12 md:my-24">
-	      		<div className="flex flex-col w-full lg:w-1/3 justify-center items-start p-8">
+	      	<div className="container mx-auto flex flex-col md:flex-row items-center">
+	      		<div className="flex flex-col w-full lg:w-1/3 justify-center items-start p-2">
 	      			<h1 className="text-3xl md:text-5xl p-2 text-yellow-300 tracking-loose">A I I T</h1>
 	      			<h2 className="text-3xl md:text-5xl leading-relaxed md:leading-snug mb-2">TRƯỜNG ĐẠI HỌC QUỐC TẾ SÀI GÒN
 	      			</h2>

@@ -4,15 +4,15 @@ const CardL = ({data}) => {
   return (
     <>
     {data && data.map(item =>(
-      <div className='hidden:md md:mb-3'>
-      <div key={item.id} className='md:w-[100%] md:flex md:gap-6 bg-white md:h-72 rounded-md md:items-center md:p-3 border border-r-neutral-400'>
+      <div className='hidden:md md:mb-1 '>
+      <div key={item.id} className='md:w-[100%] md:gap-6 bg-white md:h-auto rounded-md md:items-center md:px-2 border border-r-neutral-400 md:flex md:flex-row'>
         <img src={item.imageURL} 
            alt="pic" 
-           className='md:w-56 h-52 md:flex-1 w-full'/>
-        <div className='md:text-justify md:py-2 md:flex-3 px-2'>
-          <p className='md:text-sm text-smm md:pt-2  '><strong><i>{item.calories}</i></strong></p>
-          <h2 className='md:text-s07 md:py-2 text-sm md:poppins'>{item.title}</h2>
-          <h3 className='md:text-sm text-sm  '>{item.price}</h3>
+           className='md:w-48 h-40 md:flex-1 w-full basis-1/4'/>
+        <div className='md:text-justify md:py-1 md:flex-3 px-2 basis-3/4'>
+          <p className='md:text-sm text-smm'><strong><i>{item.calories}</i></strong></p>
+          <h2 className='md:text-s007 md:py-2 md:h-auto text-sm md:poppins md:text-clip whitespace-pre-wrap'>{item.title}</h2>
+          <h3 className='md:text-s007 text-sm  '>{item.price}</h3>
           <button className='bg-slate-400 rounded-lg hover:cursor-pointer hover:bg-gray-700 
                                md:bg-slate-300 shadow-lg shadow-slate-800/50
                                text-sm w-20
@@ -27,3 +27,5 @@ const CardL = ({data}) => {
 }
 
 export default CardL
+
+
