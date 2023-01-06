@@ -8,8 +8,6 @@ import CardR from './CardR'
 const Main = () => {
 
   const [{ Infomation , InfomationR }] = useStateValue() 
-  console.log(InfomationR)
-  console.log(Infomation)
 
   return (
     <div className='w-full'>
